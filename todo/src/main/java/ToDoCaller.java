@@ -1,3 +1,4 @@
+import java.rmi.server.ExportException;
 import java.util.Scanner;
 
 public class ToDoCaller {
@@ -30,7 +31,13 @@ public class ToDoCaller {
         switch (option) {
             case 1:
                 System.out.println("Show Task List");
-                // Write the code tpo display the list of tasks in a file
+                ToDoTasksFile fileCall = new ToDoTasksFile();
+                try{
+                    fileCall.readExcel();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("Exception pls try again");
+                }
                 break;
             case 2:
                 System.out.println("Add New Task");
@@ -45,5 +52,8 @@ public class ToDoCaller {
                 // Write a function to save and close the file
                 break;
         }
+    }
+    public int add(int a, int b){
+        return a+b;
     }
 }
