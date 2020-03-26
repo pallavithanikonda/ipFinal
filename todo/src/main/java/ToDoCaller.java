@@ -85,7 +85,7 @@ public class ToDoCaller {
             System.out.println("Pick an option:");
             System.out.println("(1) Show Task List (by date or project)");
             System.out.println("(2) Add New Task");
-            System.out.println("(3) Edit Task (update, mark as done, remove)");
+            System.out.println("(3) Edit Task (update, mark as done)");
             System.out.println("(4) Remove the task");
             System.out.println("(5) Quit");
             // get the option as an int
@@ -127,7 +127,6 @@ public class ToDoCaller {
                     editTask(id);
                     break;
                 case 4:
-                    System.out.println("Remove the task");
                     System.out.println("Choose the task Id to Edit Task");
                     String removeID = userInput();
                     removeTask(removeID);
