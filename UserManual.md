@@ -1,4 +1,4 @@
-#ToDoly by Software Development Academy - KTH  
+# ToDoly by Software Development Academy - KTH  
 ToDoly is a todo list application written in Java that uses a text based user interface. The application will allow a user to create new tasks, assign them a title and due date, and choose a project for that task to belong to.
 ## Prerequisites
 Java version 8+ 
@@ -15,22 +15,22 @@ The tasks are saved and loaded from a file on disk(We are using JSON file to sto
 - Compile the code
 If it is linux or mac, open the terminal and run the below code
 ```
-javac todo/src/main/java/*.java
+> javac todo/src/main/java/*.java
 ```
 If it is Windows machine, please open the CMD and run the below code 
 ```
-javac todo/src/main/java/*.java
+> javac todo/src/main/java/*.java
 ```
 - To start the application, run the main `ToDoCallerAppMain` class.
 ```
-java javac todo/src/main/java/ToDoCallerAppMain
+> java javac todo/src/main/java/ToDoCallerAppMain
 ```
 
 ## User Manual
 To use the ToDoly, follow the instructions below:
 
 - Select an option from the main menu:
-```sh
+```
 ******************
 Welcome to ToDoLy 
 ******************
@@ -153,6 +153,8 @@ Please choose Option `5` to save and quit.
 
 
 ## Author:
-> Pallavi Thanikonda
+> Pallavi Thanikonda:
+
 > Individual project - SDA 7
-> KTH
+
+>@KTH
