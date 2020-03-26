@@ -14,20 +14,29 @@ public class ToDoCaller {
     }
     private void printTasksList(){
         System.out.println("The Current tasks List is :");
-        System.out.println("TaskId        TaskName       Project         Due date              Status");
+        System.out.format("%2s%25s%20s%30s%32s","TaskId","TaskName","Project","Due date","Status");
+        System.out.println("");
+        System.out.println("***************************************************************************************************************************");
         for(TasksList tasksList:tasksLists){
-            System.out.println(tasksList.getId()+"        "+tasksList.getName()+"        "+tasksList.getProject()+"        "+tasksList.getDate()+"        "+tasksList.getStatus());
+            System.out.format("%2s%30s%16s%32s%32s",tasksList.getId(),tasksList.getName(),tasksList.getProject(),tasksList.getDate(),tasksList.getStatus());
+            System.out.println("");
         }
+        System.out.println("***************************************************************************************************************************");
     }
     private void addTask(ArrayList<TasksList> newTasksLists){
         JSONObject object = fm.convertTasksToJson(newTasksLists);
         fm.writeJsonToFile(object,"files/","tasks-list.json");
     }
     private void editTask(String id){
+
         System.out.println("The current values are: (if you leave empty the old values will be taken)");
+        System.out.format("%2s%25s%20s%30s%32s","TaskId","TaskName","Project","Due date","Status");
+        System.out.println("");
+        System.out.println("***************************************************************************************************************************");
         for(TasksList tasksList:tasksLists){
             if(tasksList.getId().equals(id)){
-                System.out.println(tasksList.getId()+"        "+tasksList.getName()+"        "+tasksList.getProject()+"        "+tasksList.getDate()+"        "+tasksList.getStatus());
+                System.out.format("%2s%30s%16s%32s%32s",tasksList.getId(),tasksList.getName(),tasksList.getProject(),tasksList.getDate(),tasksList.getStatus());
+                System.out.println("");
                 System.out.println("Enter task name:");
                 String name = userInput();
                 tasksList.setName(name.equals("")? tasksList.getName():name);
@@ -72,21 +81,22 @@ public class ToDoCaller {
         // Write a function to read  X and Y from Excel
         System.out.println("You have "+openTasks+" tasks todo and "+closedTasks+" tasks are done! ");
         // Provide options to user to choose
-        System.out.println("Pick an option:");
-        System.out.println("(1) Show Task List (by date or project)");
-        System.out.println("(2) Add New Task");
-        System.out.println("(3) Edit Task (update, mark as done, remove)");
-        System.out.println("(4) Remove the task");
-        System.out.println("(5) Quit");
-        // get the option as an int
-        int option=0;
-        try{
-            option = scanner.nextInt();
-        } catch(Exception e) {
-            System.out.println("Please enter only given options");
-        }
+        while (true){
+            System.out.println("Pick an option:");
+            System.out.println("(1) Show Task List (by date or project)");
+            System.out.println("(2) Add New Task");
+            System.out.println("(3) Edit Task (update, mark as done, remove)");
+            System.out.println("(4) Remove the task");
+            System.out.println("(5) Quit");
+            // get the option as an int
+            int option=0;
+            try{
+                option = scanner.nextInt();
+            } catch(Exception e) {
+                System.out.println("Please enter only given options");
+            }
 
-        System.out.println("The user have selected option:" + option);
+            System.out.println("The user have selected option:" + option);
 
             switch (option) {
                 case 1:
@@ -127,6 +137,8 @@ public class ToDoCaller {
                     System.exit(0);
             }
         }
+    }
+
 
     public String userInput() {
         Scanner scan = new Scanner(System.in);
