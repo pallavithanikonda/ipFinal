@@ -1,6 +1,6 @@
 # ToDoly by Software Development Academy - KTH  
 ToDoly is a todo list application written in Java that uses a text based user interface. The application will allow a user to create new tasks, assign them a title and due date, and choose a project for that task to belong to.
-Please find the class diagram [here](ToDoLyClassDiagram.jpg)
+Please find the class diagram ![here](ToDoLyClassDiagram.jpg)
 ## Prerequisites
 Java version 8+ 
 (Please use the link to download Java - https://www.oracle.com/java/technologies/javase-downloads.html)
