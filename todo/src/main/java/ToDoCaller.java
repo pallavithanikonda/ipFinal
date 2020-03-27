@@ -6,11 +6,12 @@ import java.util.Scanner;
 public class ToDoCaller {
     private ArrayList<TasksList> tasksLists = new ArrayList<>();
     private JSONFileManager fm = new JSONFileManager();
-    private static String membersFileName = "tasks-list.json";
+    private static String membersFileName = "files/tasks-list.json";
 
-    private void loadTasksList(){
+    public ArrayList<TasksList> loadTasksList(){
         tasksLists.clear();
-        tasksLists = fm.readFileTasksList("files/tasks-list.json");
+        tasksLists = fm.readFileTasksList(membersFileName);
+        return tasksLists;
     }
     private void printTasksList(){
         System.out.println("The Current tasks List is :");
